@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Twitter, Send, MessageSquare, Globe } from 'lucide-react';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Twitter,
+  Send,
+  MessageSquare,
+  Globe,
+  Instagram,
+} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-water.jpg';
@@ -48,8 +57,7 @@ const Contact = () => {
 
   return (
     <Layout>
-
-      {/* HERO — SAME AS ABOUT US */}
+      {/* HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={heroImage} alt="Contact" className="w-full h-full object-cover" />
@@ -100,43 +108,105 @@ const Contact = () => {
               </span>
 
               <div className="mt-8 space-y-6">
-                {[ 
-                  { icon: Phone, label: 'Call Us', value: '+91 9000893889' },
-                  { icon: Mail, label: 'Email Us', value: 'imak.tech365@gmail.com' },
-                  { icon: Twitter, label: 'Twitter / X', value: '@imak_shareef' },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-5 p-6 bg-card rounded-2xl shadow-card"
-                  >
+
+                {/* PHONE */}
+                <a href="tel:+919000893889">
+                  <div className="flex items-center gap-5 p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition">
                     <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
-                      <item.icon className="w-6 h-6 text-accent" />
+                      <Phone className="w-6 h-6 text-accent" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold">
-                        {item.label}
+                        Call Us
                       </p>
                       <p className="text-foreground font-bold text-lg">
-                        {item.value}
+                        +91 9000893889
                       </p>
                     </div>
                   </div>
-                ))}
+                </a>
 
-                <div className="flex items-start gap-5 p-6 bg-card rounded-2xl shadow-card">
-                  <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-accent" />
+                {/* EMAIL */}
+                <a href="mailto:imak.tech365@gmail.com">
+                  <div className="flex items-center gap-5 p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition">
+                    <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold">
+                        Email Us
+                      </p>
+                      <p className="text-foreground font-bold text-lg">
+                        imak.tech365@gmail.com
+                      </p>
+                    </div>
                   </div>
-                  <address className="not-italic text-foreground font-semibold leading-relaxed">
-                    14-26, Shakthi Sai Nagar,<br />
-                    BEL IDA, Mallapur,<br />
-                    Secunderabad – 500076
-                  </address>
-                </div>
+                </a>
+
+                {/* TWITTER */}
+                <a
+                  href="https://x.com/imak_shareef"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex items-center gap-5 p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition">
+                    <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
+                      <Twitter className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold">
+                        Twitter / X
+                      </p>
+                      <p className="text-foreground font-bold text-lg">
+                        @imak_shareef
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                {/* INSTAGRAM */}
+                <a
+                  href="https://www.instagram.com/imak.technologies?igsh=dDkxY2psc24wZHVp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex items-center gap-5 p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition">
+                    <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
+                      <Instagram className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold">
+                        Instagram
+                      </p>
+                      <p className="text-foreground font-bold text-lg">
+                        imak.technologies
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                {/* LOCATION */}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=14-26+Shakthi+Sai+Nagar+Mallapur+Secunderabad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex items-start gap-5 p-6 bg-card rounded-2xl shadow-card hover:shadow-elevated transition">
+                    <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-accent" />
+                    </div>
+                    <address className="not-italic text-foreground font-semibold leading-relaxed">
+                      14-26, Shakthi Sai Nagar,<br />
+                      BEL IDA, Mallapur,<br />
+                      Secunderabad – 500076
+                    </address>
+                  </div>
+                </a>
+
               </div>
             </motion.div>
 
-            {/* RIGHT — FORM (UNCHANGED LOGIC) */}
+            {/* RIGHT — FORM (UNCHANGED) */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -151,72 +221,29 @@ const Contact = () => {
                 </div>
 
                 <form onSubmit={handleSendWhatsApp} className="p-10 space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input id="name" placeholder="Your Name" onChange={handleChange} className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-cyan-200 outline-none" />
+                    <input id="number" placeholder="Phone Number" onChange={handleChange} className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-cyan-200 outline-none" />
+                  </div>
 
-  {/* Row 1: Name + Phone */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <input
-      id="name"
-      placeholder="Your Name"
-      onChange={handleChange}
-      className="w-full px-5 py-4 rounded-2xl border border-gray-200
-                 focus:ring-4 focus:ring-cyan-200 focus:border-transparent
-                 outline-none transition"
-    />
+                  <select id="service" onChange={handleChange} className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-cyan-200 outline-none">
+                    <option value="">Select Service</option>
+                    {servicesList.map((s, i) => <option key={i}>{s}</option>)}
+                  </select>
 
-    <input
-      id="number"
-      placeholder="Phone Number"
-      onChange={handleChange}
-      className="w-full px-5 py-4 rounded-2xl border border-gray-200
-                 focus:ring-4 focus:ring-cyan-200 focus:border-transparent
-                 outline-none transition"
-    />
-  </div>
+                  <textarea id="description" rows={4} placeholder="Message" onChange={handleChange} className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-cyan-200 outline-none resize-none" />
 
-  {/* Row 2: Service */}
-  <select
-    id="service"
-    onChange={handleChange}
-    className="w-full px-5 py-4 rounded-2xl border border-gray-200
-               focus:ring-4 focus:ring-cyan-200 focus:border-transparent
-               outline-none transition"
-  >
-    <option value="">Select Service</option>
-    {servicesList.map((s, i) => (
-      <option key={i}>{s}</option>
-    ))}
-  </select>
-
-  {/* Row 3: Message */}
-  <textarea
-    id="description"
-    rows={4}
-    placeholder="Message"
-    onChange={handleChange}
-    className="w-full px-5 py-4 rounded-2xl border border-gray-200
-               focus:ring-4 focus:ring-cyan-200 focus:border-transparent
-               outline-none transition resize-none"
-  />
-
-  {/* Button */}
-  <Button
-    className="w-full py-6 rounded-2xl text-lg font-bold text-white
-               shadow-lg hover:opacity-95 flex items-center justify-center gap-2"
-    style={{ backgroundColor: BLUE }}
-  >
-    <Send size={20} />
-    Send Message Now
-  </Button>
-
-</form>
-
+                  <Button className="w-full py-6 rounded-2xl text-lg font-bold text-white shadow-lg hover:opacity-95 flex items-center justify-center gap-2" style={{ backgroundColor: BLUE }}>
+                    <Send size={20} />
+                    Send Message Now
+                  </Button>
+                </form>
               </div>
             </motion.div>
 
           </div>
         </div>
       </section>
-
     </Layout>
   );
 };
