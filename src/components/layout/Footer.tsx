@@ -46,32 +46,6 @@ const Footer = () => {
         >
           <Droplets className="w-16 h-16" />
         </motion.div>
-
-        <motion.div
-          animate={{ y: [20, -20, 20] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-32 right-[15%] opacity-10"
-        >
-          <Droplets className="w-12 h-12" />
-        </motion.div>
-
-        <div className="absolute bottom-0 left-0 w-full h-32 opacity-20">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <motion.path
-              d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z"
-              fill="currentColor"
-              className="text-accent"
-              animate={{
-                d: [
-                  "M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z",
-                  "M0,80 C360,20 720,100 1080,40 C1260,60 1380,90 1440,80 L1440,120 L0,120 Z",
-                  "M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z",
-                ],
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </svg>
-        </div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
@@ -83,40 +57,40 @@ const Footer = () => {
               <img src={logo} alt="IMAK Technologies" className="w-14 h-14" />
               <div>
                 <h3 className="font-bold text-xl">IMAK Technologies</h3>
-                <p className="text-sm opacity-70">
+                <p className="text-sm opacity-80">
                   Water & Waste Water Management
                 </p>
               </div>
             </div>
 
-            <p className="text-sm opacity-80 mb-6">
+            <p className="text-base opacity-90 mb-6 leading-relaxed">
               Sustainable water and wastewater management solutions.
             </p>
 
-            <div className="flex gap-3">
+            <div className="flex gap-4 mt-4">
               <a href="https://www.instagram.com/imak.technologies" target="_blank" rel="noreferrer">
-                <Instagram />
+                <Instagram className="w-6 h-6 hover:scale-110 transition" />
               </a>
               <a href="https://youtube.com/@imaktechnologies" target="_blank" rel="noreferrer">
-                <Youtube />
+                <Youtube className="w-6 h-6 hover:scale-110 transition" />
               </a>
               <a href="https://www.facebook.com/share/1FN6xEjEqA/" target="_blank" rel="noreferrer">
-                <Facebook />
+                <Facebook className="w-6 h-6 hover:scale-110 transition" />
               </a>
               <a href="https://x.com/imak_shareef" target="_blank" rel="noreferrer">
-                <Twitter />
+                <Twitter className="w-6 h-6 hover:scale-110 transition" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4 text-accent">Quick Links</h4>
+            <h4 className="font-bold mb-5 text-accent text-lg">Quick Links</h4>
             {quickLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className="block text-sm opacity-70 hover:opacity-100"
+                className="block text-base opacity-80 hover:opacity-100 hover:translate-x-1 transition mb-2"
               >
                 {link.name}
               </Link>
@@ -125,54 +99,68 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4 text-accent">Our Services</h4>
+            <h4 className="font-bold mb-5 text-accent text-lg">Our Services</h4>
             {services.map((service) => (
-              <Link
-                key={service}
-                to="/services"
-                className="block text-xs opacity-70 hover:opacity-100"
-              >
-                {service}
-              </Link>
-            ))}
+  <Link
+    key={service}
+    to="/services"
+    className="block text-base opacity-80 hover:opacity-100 hover:translate-x-1 transition mb-2"
+  >
+    {service}
+  </Link>
+))}
+
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold mb-4 text-accent">Contact Us</h4>
+            <h4 className="font-bold mb-5 text-accent text-lg">Contact Us</h4>
 
-            <div className="flex items-center gap-2 mb-2">
-              <Phone size={16} /> <span>+91 9000893889</span>
-            </div>
+            <a
+              href="tel:+919000893889"
+              className="flex items-center gap-3 mb-3 text-base hover:opacity-100 opacity-80 transition"
+            >
+              <Phone size={18} />
+              +91 9000893889
+            </a>
 
-            <div className="flex items-center gap-2 mb-2">
-              <Mail size={16} /> <span>imak.tech365@gmail.com</span>
-            </div>
+            <a
+              href="mailto:imak.tech365@gmail.com"
+              className="flex items-center gap-3 mb-3 text-base hover:opacity-100 opacity-80 transition"
+            >
+              <Mail size={18} />
+              imak.tech365@gmail.com
+            </a>
 
-            <div className="flex gap-2 mt-2">
-              <MapPin size={16} />
-              <address className="not-italic text-sm">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=14-26+Shakthi+Sai+Nagar+Mallapur+Secunderabad"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-start gap-3 text-base hover:opacity-100 opacity-80 transition"
+            >
+              <MapPin size={18} />
+              <address className="not-italic leading-relaxed">
                 14-26, Shakthi Sai Nagar,<br />
                 BEL, Industrial Development Area,<br />
                 Mallapur, Secunderabad,<br />
                 Telangana – 500076
               </address>
-            </div>
+            </a>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="text-center mt-10 pt-6 border-t border-white/10">
-          <p className="text-sm opacity-60">
+        <div className="text-center mt-12 pt-6 border-t border-white/10">
+          <p className="text-sm opacity-70">
             © {new Date().getFullYear()} IMAK Technologies
           </p>
-          <p className="text-xs opacity-60">
+          <p className="text-xs opacity-70 mt-1">
             Made with 💙 by{' '}
             <a
               href="https://www.staffarc.in/"
               target="_blank"
               rel="noreferrer"
-              className="underline"
+              className="underline hover:opacity-100"
             >
               StaffArc
             </a>
