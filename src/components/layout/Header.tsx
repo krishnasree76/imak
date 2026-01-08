@@ -14,6 +14,7 @@ const navItems = [
 ];
 
 const BLUE = '#0B3C5D';
+const LIGHT_BLUE = '#3FA9F5';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,41 +27,44 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4 lg:px-8">
+
         <div className="flex items-center justify-between py-3">
 
           {/* Logo + Brand */}
-          <Link to="/" className="flex items-center gap-3">
-            <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
+          <Link to="/" className="flex flex-col items-center text-center">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
+            >
               <img
                 src={logo}
-                alt="IMAK"
-                className="w-14 h-14 object-contain"
+                alt="IMAK Technologies Logo"
+                className="w-20 h-20 object-contain"
               />
             </motion.div>
 
-            <div className="flex flex-col leading-tight">
-              <span
-                className="text-xl font-semibold tracking-wide"
-                style={{
-                  color: BLUE,
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                IMAK TECHNOLOGIES
-              </span>
-              <span
-                className="text-xs"
-                style={{
-                  color: BLUE,
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                Water & Waste Water Management
-              </span>
-            </div>
+            <span
+              className="mt-1 text-lg font-semibold tracking-wide"
+              style={{
+                color: BLUE,
+                fontFamily: 'Poppins, sans-serif',
+              }}
+            >
+              IMAK TECHNOLOGIES
+            </span>
+
+            <span
+              className="text-xs tracking-widest mt-0.5"
+              style={{
+                color: LIGHT_BLUE,
+                fontFamily: 'Poppins, sans-serif',
+              }}
+            >
+              WATER | EARTH | NATURE
+            </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex gap-1">
             {navItems.map(item => {
               const isActive = location.pathname === item.path;
@@ -91,9 +95,10 @@ const Header = () => {
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </Button>
+
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.nav

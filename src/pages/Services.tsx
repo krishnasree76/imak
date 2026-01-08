@@ -114,7 +114,7 @@ const services = [
     description:
       'Comprehensive annual maintenance services ensuring long-term equipment reliability.',
     image: serviceAmc,
-    features: ['Preventive Maintenance', 'Diagnostics', 'Priority Repairs'],
+    features: ['Preventive Maintenance', 'Priority Repairs'],
   },
 ];
 

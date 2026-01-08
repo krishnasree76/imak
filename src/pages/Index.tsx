@@ -41,39 +41,49 @@ const staggerContainer = {
 const heroSlides = [
   {
     image: heroImage,
-    title: <>Sustainable Water & <span className="text-accent">Wastewater</span> Management Systems</>,
-    description: (
+    title: (
       <>
-        Preserving <span className="font-heading font-bold text-[#4FC3F7]">Water</span>. 
-        Protecting <span className="font-heading font-bold text-nature">Earth</span>. 
-        Powering the <span className="font-heading font-bold text-[#81C784]">Nature</span>.
+        <span className="text-white">Welcome to </span>
+        <span className="font-bold text-accent">
+          IMAK TECHNOLOGIES
+        </span>
       </>
     ),
+    description: (
+      <span className="text-white text-lg md:text-xl">
+        Sustainable Water & Waste Water Management Systems
+      </span>
+    ),
     showOverlay: true,
-    badge: "Eco-Friendly Water Solutions"
+    badge: null,
   },
   {
     image: swimmingPoolImg,
     title: "SWIMMING POOL",
-    description: "Expertly designed swimming pool systems focused on water clarity, hygiene, and sustainable circulation.",
+    description:
+      "Expertly designed swimming pool systems focused on water clarity, hygiene, and sustainable circulation.",
     showOverlay: false,
-    badge: "Premium Aquatic Systems"
+    badge: "Premium Aquatic Systems",
   },
   {
     image: sewageImg,
     title: "Sewage Treatment Plant (STP)",
-    description: "State-of-the-art sewage treatment plants designed to treat domestic and industrial wastewater efficiently.",
+    description:
+      "State-of-the-art sewage treatment plants designed to treat domestic and industrial wastewater efficiently.",
     showOverlay: false,
-    badge: "Waste Management"
+    badge: "Waste Management",
   },
   {
     image: waterPlantImg,
     title: "Water Treatment Plant (WTP)",
-    description: "Comprehensive water treatment solutions for potable and industrial applications.",
+    description:
+      "Comprehensive water treatment solutions for potable and industrial applications.",
     showOverlay: false,
-    badge: "Pure Water Solutions"
-  }
+    badge: "Pure Water Solutions",
+  },
 ];
+
+
 
 const Index = () => {
   const [heroIndex, setHeroIndex] = useState(0);
