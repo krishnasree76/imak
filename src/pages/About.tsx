@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Droplets, Leaf, Shield, Users, Globe, Heart, Target } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import aboutImage from '@/assets/project-3.jpg';
+import aboutImage from '@/assets/image.png';
 import heroImage from '@/assets/hero-water.jpg';
 
 const fadeInUp = {

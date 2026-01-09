@@ -10,7 +10,7 @@ import {
   Twitter,
   Droplets,
 } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/imak.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -30,7 +30,7 @@ const services = [
   'Chemical Supplies',
   'Common Salt',
   'TCCA (Trichloroisocyanuric Acid)',
-  'Sewage Tank Cleaning',
+  'Sewage Tanks Cleaning',
   'Annual Maintenance Contract (AMC) & Repairs',
 ];
 
@@ -53,18 +53,51 @@ const Footer = () => {
 
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="IMAK Technologies" className="w-14 h-14" />
-              <div>
-                <h3 className="font-bold text-xl">IMAK Technologies</h3>
-                <p className="text-sm opacity-80">
-                  Water & Waste Water Management
-                </p>
-              </div>
-            </div>
+            <div className="flex items-center gap-2 mb-6">
+  {/* Logo */}
+  <img
+    src={logo}
+    alt="IMAK Technologies"
+    className="w-12 h-12 object-contain"
+    style={{
+      filter: 'drop-shadow(0 0 3px rgba(255,255,255,0.6))',
+    }}
+  />
+
+  {/* Text */}
+  <div
+    className="relative"
+    style={{
+      fontFamily: 'Montserrat, sans-serif',
+      lineHeight: '1.1',
+    }}
+  >
+    {/* IMAK TECHNOLOGIES – one line */}
+    <span className="block text-[20px] font-bold text-white">
+      IMAK{' '}
+      <span className="relative inline-block">
+        TECHNOLOGIES
+
+        {/* Tagline – tight & attached */}
+        <span
+          className="absolute left-0 top-full whitespace-nowrap"
+          style={{
+            marginTop: '0px',        // 🔴 key fix (no gap)
+            fontSize: '11px',
+            fontWeight: 500,
+            color: 'rgba(255,255,255,0.75)',
+            letterSpacing: '0.08em',
+          }}
+        >
+          WATER | EARTH | NATURE
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
 
             <p className="text-base opacity-90 mb-6 leading-relaxed">
-              Sustainable water and wastewater management solutions.
+              Sustainable water and wastewater management systems.
             </p>
 
             <div className="flex gap-4 mt-4">
@@ -86,7 +119,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-bold mb-5 text-accent text-lg">Quick Links</h4>
-            {quickLinks.map((link) => (
+            {quickLinks.map(link => (
               <Link
                 key={link.name}
                 to={link.path}
@@ -100,43 +133,34 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="font-bold mb-5 text-accent text-lg">Our Services</h4>
-            {services.map((service) => (
-  <Link
-    key={service}
-    to="/services"
-    className="block text-base opacity-80 hover:opacity-100 hover:translate-x-1 transition mb-2"
-  >
-    {service}
-  </Link>
-))}
-
+            {services.map(service => (
+              <Link
+                key={service}
+                to="/services"
+                className="block text-base opacity-80 hover:opacity-100 hover:translate-x-1 transition mb-2"
+              >
+                {service}
+              </Link>
+            ))}
           </div>
 
           {/* Contact */}
           <div>
             <h4 className="font-bold mb-5 text-accent text-lg">Contact Us</h4>
 
-            <a
-              href="tel:+919000893889"
-              className="flex items-center gap-3 mb-3 text-base hover:opacity-100 opacity-80 transition"
-            >
-              <Phone size={18} />
-              +91 9000893889
+            <a href="tel:+919000893889" className="flex items-center gap-3 mb-3 text-base opacity-80 hover:opacity-100">
+              <Phone size={18} /> +91 9000893889
             </a>
 
-            <a
-              href="mailto:imak.tech365@gmail.com"
-              className="flex items-center gap-3 mb-3 text-base hover:opacity-100 opacity-80 transition"
-            >
-              <Mail size={18} />
-              imak.tech365@gmail.com
+            <a href="mailto:imak.tech365@gmail.com" className="flex items-center gap-3 mb-3 text-base opacity-80 hover:opacity-100">
+              <Mail size={18} /> imak.tech365@gmail.com
             </a>
 
             <a
               href="https://www.google.com/maps/search/?api=1&query=14-26+Shakthi+Sai+Nagar+Mallapur+Secunderabad"
               target="_blank"
               rel="noreferrer"
-              className="flex items-start gap-3 text-base hover:opacity-100 opacity-80 transition"
+              className="flex items-start gap-3 text-base opacity-80 hover:opacity-100"
             >
               <MapPin size={18} />
               <address className="not-italic leading-relaxed">
@@ -153,17 +177,6 @@ const Footer = () => {
         <div className="text-center mt-12 pt-6 border-t border-white/10">
           <p className="text-sm opacity-70">
             © {new Date().getFullYear()} IMAK Technologies
-          </p>
-          <p className="text-xs opacity-70 mt-1">
-            Made with 💙 by{' '}
-            <a
-              href="https://www.staffarc.in/"
-              target="_blank"
-              rel="noreferrer"
-              className="underline hover:opacity-100"
-            >
-              StaffArc
-            </a>
           </p>
         </div>
       </div>

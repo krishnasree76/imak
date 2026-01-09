@@ -102,7 +102,7 @@ const services = [
   },
   {
     id: 10,
-    title: 'Sewage Tank Cleaning',
+    title: 'Sewage Tanks Cleaning',
     description:
       'Professional sewage and septic tank cleaning services with safe disposal practices.',
     image: serviceTank,
